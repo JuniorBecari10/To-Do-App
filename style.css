@@ -1,0 +1,136 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+    
+    color: white;
+}
+
+body {
+    background-color: #2C3333;
+    
+    overflow: hidden;
+}
+
+header {
+    background-color: #395B64;
+    
+    height: 70px;
+    
+    border-bottom: 1px solid #2d474f;
+}
+
+input {
+    background-color: #252b2b;
+    border: none;
+}
+
+div#todos div.el input:focus {
+    outline: 1px solid #2666CF;
+}
+
+div#todos div.el input:hover {
+    border-bottom: 1px solid #2666CF;
+}
+
+div#todos div.el input[type="text"] {
+    padding: 5px;
+    
+    width: 95%;
+}
+
+input#todo {
+    position: relative;
+    bottom: 10px;
+    
+    margin-left: 50%;
+    transform: translateX(-50%);
+    
+    margin-top: 20px;
+    
+    font-size: 15px;
+    border-radius: 20px;
+    
+    padding: 15px;
+    
+    width: 30%;
+    
+    transition: border-width 0.5s;
+}
+
+input#todo:focus {
+    outline: none;
+    border: 2px solid #2666CF;
+    
+    width: 30%;
+}
+
+a {
+    text-decoration: none;
+}
+
+button#add {
+    background-color: white;
+    color: #252b2b;
+    
+    position: relative;
+    
+    bottom: 10px;
+    right: 18.5%;
+    
+    font-size: 18px;
+    
+    width: 33px;
+    height: 33px;
+    
+    font-weight: bold;
+    border-radius: 20px;
+    
+    border: 1px solid white;
+    outline: none;
+    
+    cursor: pointer;
+    
+    transition: background-color 0.25s;
+}
+
+button#add:hover {
+    background-color: lightgray;
+    border: 1px solid lightgray;
+}
+
+div#todos {
+    width: 100%;
+    height: calc(100vh - 70px);
+    
+    margin-top: 20px;
+    
+    overflow-y: auto;
+}
+
+div.el {
+    width: 70%;
+    padding: 15px;
+    
+    border-radius: 10px;
+    
+    background-color: #252b2b;
+    
+    margin-left: 50%;
+    transform: translateX(-50%);
+    
+    margin-bottom: 10px;
+}
+
+div.el * {
+    display: inline-block;
+}
+
+div.el input[type="checkbox"] {
+    float: right;
+    
+    margin-top: 5px;
+    margin-right: 10px;
+    transform: scale(1.2);
+}
