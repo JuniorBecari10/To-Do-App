@@ -7,9 +7,8 @@ const todoHTMLElements = document.getElementsByClassName("el");
 var todoElements = []
 
 class TodoElement {
-    constructor(name, done) {
+    constructor(name) {
         this.name = name;
-        this.done = done;
     }
 }
 
@@ -28,7 +27,7 @@ function addToList(name) {
     
     todoBar.value = "";
     
-    var e = new TodoElement(name, false);
+    var e = new TodoElement(name);
     
     todoElements.push(e);
     
