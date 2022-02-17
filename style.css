@@ -134,3 +134,7 @@ div.el input[type="checkbox"] {
     margin-right: 10px;
     transform: scale(1.2);
 }
+
+.done input[type="text"] {
+    text-decoration: line-through;
+}

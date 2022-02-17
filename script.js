@@ -33,7 +33,20 @@ function addToList(name) {
     todoElements.push(e);
     
     var element = document.createElement("div");
-    element.innerHTML = "<div class='el'><input type='text' value='" + e.name + "'></input><input type='checkbox' class='done'></div>";
+    element.classList.add("el");
+    element.innerHTML = "<input type='text' value='" + e.name + "'></input>";
+    
+    var chk = document.createElement("input");
+    chk.type = "checkbox";
+    
+    chk.addEventListener("change", () => {
+        if (chk.checked)
+            chk.parentNode.classList.add("done");
+        else
+            chk.parentNode.classList.remove("done");
+    });
+    
+    element.appendChild(chk);
     
     todos.appendChild(element);
 }
