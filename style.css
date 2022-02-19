@@ -107,7 +107,7 @@ button#add:hover {
     border: 1px solid lightgray;
 }
 
-div#todos {
+div#todos, div#empty {
     width: 100%;
     height: calc(100vh - 70px);
     
@@ -157,4 +157,24 @@ div.el input[type="checkbox"] {
 
 header i:hover {
     color: lightgray;
+}
+
+#empty * {
+    margin-left: 50%;
+    margin-top: 50px;
+}
+
+#empty h1, p {
+    position: relative;
+    right: 24%;
+    
+    text-align: center;
+}
+
+#empty p {
+    bottom: 40px; /* 30px */
+}
+
+#empty i {
+    transform: scale(3);
 }

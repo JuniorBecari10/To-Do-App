@@ -2,6 +2,7 @@ const todoBar = document.getElementById("todo");
 const btn = document.getElementById("add");
 const todos = document.getElementById("todos");
 const clear = document.getElementById("clear");
+const empty = document.getElementById("empty");
 
 const todoHTMLElements = document.getElementsByClassName("el");
 
@@ -33,6 +34,7 @@ clear.onclick = () => {
 function addToList(name) {
     if (todoBar.value === "") return;
     
+    empty.style.display = "none";
     todoBar.value = "";
     
     var e = new TodoElement(name);
