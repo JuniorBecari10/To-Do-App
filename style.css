@@ -37,7 +37,15 @@ div#todos div.el input:hover {
 div#todos div.el input[type="text"] {
     padding: 5px;
     
-    width: 95%;
+    width: 93%;
+}
+
+div#todos div.el i {
+    margin-left: 2%;
+}
+
+div#todos div.el i:hover {
+    color: lightgray;
 }
 
 input#todo {

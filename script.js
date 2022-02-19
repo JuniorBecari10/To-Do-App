@@ -38,6 +38,10 @@ function addToList(name) {
     var chk = document.createElement("input");
     chk.type = "checkbox";
     
+    var close = document.createElement("i");
+    close.classList.add("fas");
+    close.classList.add("fa-times");
+    
     chk.addEventListener("change", () => {
         if (chk.checked)
             chk.parentNode.classList.add("done");
@@ -45,7 +49,13 @@ function addToList(name) {
             chk.parentNode.classList.remove("done");
     });
     
+    close.addEventListener("click", () => {
+        close.parentNode.remove();
+        //todoElements.remove(e);
+    });
+    
     element.appendChild(chk);
+    element.appendChild(close);
     
     todos.appendChild(element);
 }
