@@ -1,6 +1,7 @@
 const todoBar = document.getElementById("todo");
 const btn = document.getElementById("add");
 const todos = document.getElementById("todos");
+const clear = document.getElementById("clear");
 
 const todoHTMLElements = document.getElementsByClassName("el");
 
@@ -20,6 +21,13 @@ window.addEventListener("keypress", (e) => {
 
 btn.onclick = () => {
     addToList(todoBar.value);
+};
+
+clear.onclick = () => {
+    todos.innerHTML = "";
+    todoElements.length = 0;
+    
+    todoBar.value = "";
 };
 
 function addToList(name) {
