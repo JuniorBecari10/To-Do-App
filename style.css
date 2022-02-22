@@ -81,10 +81,11 @@ button#add {
     background-color: white;
     color: #252b2b;
     
-    position: relative;
+    position: absolute;
     
-    bottom: 10px;
-    right: 18.5%;
+    /*bottom: 10px;*/
+    /*right: 18.5%;*/
+    top: 18px;
     
     font-size: 18px;
     
@@ -177,4 +178,25 @@ header i:hover {
 
 #empty i {
     transform: scale(3);
+}
+
+@media screen and (max-width: 500px) {
+    input#todo {
+        width: 70%;
+    }
+    
+    input#todo:focus {
+        width: 70%;
+    }
+    
+    i#clear {
+        position: absolute;
+        
+        right: 20px;
+        top: 125px;
+    }
+    
+    div.el input[type="text"] {
+        width: 20%;
+    }
 }

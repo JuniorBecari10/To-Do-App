@@ -1,5 +1,5 @@
 const todoBar = document.getElementById("todo");
-const btn = document.getElementById("add");
+const add = document.getElementById("add");
 const todos = document.getElementById("todos");
 const clear = document.getElementById("clear");
 const empty = document.getElementById("empty");
@@ -7,6 +7,7 @@ const empty = document.getElementById("empty");
 const todoHTMLElements = document.getElementsByClassName("el");
 
 var todoElements = []
+var functions = []
 
 class TodoElement {
     constructor(name) {
@@ -17,18 +18,36 @@ class TodoElement {
 window.addEventListener("keypress", (e) => {
     if (e.keyCode == 13) { // enter
         addToList(todoBar.value);
+        todoBar.focus();
     }
 });
 
-btn.onclick = () => {
+updatePositions();
+
+function updatePositions() {
+    var rect = todoBar.getBoundingClientRect();
+    
+    add.style.left = "" + (rect.left + rect.width - 50) + "px"
+    //clear.style.left = "" + (parseInt(add.style.left) + 50) + "px";
+    
+    for (let f of functions) {
+        f();
+    }
+    
+    setTimeout(updatePositions, 1);
+}
+
+add.onclick = () => {
     addToList(todoBar.value);
 };
-
+    
 clear.onclick = () => {
     todos.innerHTML = "";
     todoElements.length = 0;
     
     todoBar.value = "";
+    
+    empty.style.display = "";
 };
 
 function addToList(name) {
@@ -60,8 +79,18 @@ function addToList(name) {
     });
     
     close.addEventListener("click", () => {
+        if (todos.innerHTML === "") {
+            empty.style.display = "";
+        }
+        
         close.parentNode.remove();
         //todoElements.remove(e);
+    });
+    
+    functions.push(() => {
+        var rect = chk.getBoundingClientRect();
+        
+        //close.left = (rect.left - 30) + "px";
     });
     
     element.appendChild(chk);
