@@ -180,23 +180,40 @@ header i:hover {
     transform: scale(3);
 }
 
-@media screen and (max-width: 500px) {
+@media screen and (max-width: 1050px) {
     input#todo {
-        width: 70%;
+        width: 80%;
     }
     
     input#todo:focus {
-        width: 70%;
+        width: 80%;
     }
     
     i#clear {
         position: absolute;
         
-        right: 20px;
-        top: 125px;
+        top: 14.6vh;
+        right: 15px;
     }
     
-    div.el input[type="text"] {
-        width: 20%;
+    div#todos div.el input[type="text"] {
+        width: 70%;
+    }
+    
+    div#todos div.el input[type="text"]:focus {
+        border: none;
+    }
+    
+    div.el input[type="checkbox"] {
+        position: relative;
+        
+        left: 10px;
+    }
+    
+    div.el i {
+        position: absolute;
+        
+        top: 19px;
+        right: 50px;
     }
 }

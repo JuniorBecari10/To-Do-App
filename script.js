@@ -27,7 +27,8 @@ updatePositions();
 function updatePositions() {
     var rect = todoBar.getBoundingClientRect();
     
-    add.style.left = "" + (rect.left + rect.width - 50) + "px"
+    add.style.left = (rect.left + rect.width - 50) + "px";
+    //clear.style.top = (110 + rect.top) + "px";
     //clear.style.left = "" + (parseInt(add.style.left) + 50) + "px";
     
     for (let f of functions) {
